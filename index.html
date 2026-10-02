@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistem dan Teknologi Informasi</title>
+    <!-- =================================================
+         CSS
+    ================================================== -->
+    <style>
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #9e0748;
+            color: white;
+        }
+        
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* =========================
+           CSS DASAR
+        ========================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            overflow: hidden;
+            background: #061a39;
+            color: white;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            overflow: hidden;
+            background: #061b3a;
+        }
+        /* =========================
+           HERO / BACKGROUND
+        ========================= */
+        .page {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #061a39;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+
+            filter: brightness(0.62);
+
+            z-index: 0;
+        }
+
+
+
+        /* ===============================
+           HEADER
+        =============================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            background: rgba(4, 20, 45, 0.95);
+
+            backdrop-filter: blur(10px);
+
+            z-index: 1000;
+
+            border-bottom: 1px solid
+                rgba(255,255,255,0.15);
+        }  
+
+        /* ===============================
+           LOGO
+        =============================== */
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 52px;
+            height: 52px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+
+            font-size: 12px;
+
+            line-height: 1.2;
+        }
+
+        .logo-text strong:first-child {
+            font-size: 15px;
+        }
+
+
+        /* ===============================
+           MENU
+        =============================== */
+
+        nav {
+            display: flex;
+            align-items: center;
+
+            gap: 28px;
+
+            height: 100%;
+        }
+
+        nav > a,
+        .dropdown-btn {
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+        nav > a:hover,
+        .dropdown-btn:hover {
+            color: #4da6ff;
+        }
+
+
+        /* ===============================
+           DROPDOWN
+           HANYA 1 DROPDOWN
+        =============================== */
+
+        .dropdown {
+            position: relative;
+
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown-btn {
+            background: none;
+
+            border: none;
+
+            cursor: pointer;
+
+            font-family: Arial, sans-serif;
+        }
+
+        .arrow {
+            font-size: 10px;
+
+            margin-left: 5px;
+        }
+
+
+        .dropdown-menu {
+            position: absolute;
+
+            top: 68px;
+            left: -20px;
+
+            width: 210px;
+
+            padding: 8px;
+
+            background: #09244a;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 15px 35px
+                rgba(0,0,0,0.35);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(10px);
+
+            transition: 0.3s;
+        }
+
+
+        .dropdown-menu.show {
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
+
+        .dropdown-menu a {
+            display: block;
+
+            padding: 12px 15px;
+
+            color: white;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+        }
+
+
+        .dropdown-menu a:hover {
+            background: #14599f;
+
+            color: #6dbaff;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #08080a;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+
+        /* =========================
+           SEARCH AREA
+        ========================= */
+
+        .search-area {
+            width: 40%;
+            min-height: 40pc;
+
+            display: flex;
+            align-items: center;
+
+            gap: 25px;
+
+            padding: 0 32px;
+        }
+
+
+        /* =========================
+           SEARCH BOX
+        ========================= */
+
+        .search-box {
+            height: 30px;
+
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 25px;
+
+            border: 2px solid #8b35ff;
+
+            border-radius: 30px;
+
+            background: #000;
+
+            transition: 0.2s;
+        }
+
+
+        /* Border saat search aktif */
+
+        .search-box:focus-within {
+
+            border-color: #9d42ff;
+
+            box-shadow:
+                0 0 8px rgba(139,53,255,0.2);
+        }
+
+
+        /* =========================
+           ICON SEARCH
+        ========================= */
+
+        .search-icon {
+
+            width: 10px;
+            height: 10px;
+
+            border: 3px solid #8c8c8c;
+
+            border-radius: 15px;
+
+            position: relative;
+
+            margin-right: 10%;
+
+            flex-shrink: 0;
+        }
+
+
+        .search-icon::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 13px;
+            height: 3px;
+
+            background: #8c8c8c;
+
+            border-radius: 3px;
+
+            transform: rotate(-45deg);
+
+            right: -9px;
+            bottom: -5px;
+        }
+
+
+        /* =========================
+           INPUT
+        ========================= */
+
+        .search-input {
+
+            width: 70%;
+
+            height:70%;
+
+            border: none;
+
+            outline: none;
+
+            background: transparent;
+
+            color: white;
+
+            font-size: 100%;
+
+            font-weight: 40%;
+        }
+
+
+        .search-input::placeholder {
+
+            color: #92929a;
+
+            opacity: 1;
+        }
+        /* =========================
+           CANCEL
+        ========================= */
+
+        .cancel {
+
+            border: none;
+
+            background: transparent;
+
+            color: white;
+
+            font-size: 13px;
+
+            cursor: pointer;
+
+            padding: 10px;
+
+            white-space: nowrap;
+        }
+
+
+        .cancel:hover {
+
+            color: #b7b7b7;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 70px) {
+
+            .search-area {
+
+                padding: 0 15px;
+
+                gap: 10px;
+            }
+
+            .search-box {
+
+                height: 30px;
+
+                padding: 0 15px;
+
+                border-radius: 13px;
+            }
+
+            .search-icon {
+
+                width: 9px;
+                height: 4px;
+
+                border-width: 2px;
+
+                margin-right: 14px;
+            }
+
+            .search-icon::after {
+
+                width: 10%;
+
+                height: 2%;
+
+                right: -7px;
+
+                bottom: -4px;
+            }
+
+            .search-input {
+
+                font-size: 12px;
+            }
+
+            .cancel {
+
+                font-size: 22px;
+
+                padding: 5px;
+            }
+        }
+
+
+
+        /* ===============================
+           MOBILE MENU
+        =============================== */
+
+        .menu-toggle {
+            display: none;
+
+            background: none;
+
+            border: none;
+
+            color: white;
+
+            font-size: 28px;
+
+            cursor: pointer;
+        }
+
+
+        /* ===============================
+           HERO SECTION
+        =============================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+
+            /* FOTO ALMAMATER */
+
+            background-image:
+                url("foto-almamater.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+
+        /* OVERLAY */
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(3,20,48,0.95),
+                    rgba(4,30,65,0.70),
+                    rgba(4,30,65,0.25)
+                );
+        }
+
+
+        /* ===============================
+           HERO CONTENT
+        =============================== */
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 750px;
+
+            margin-left: 8%;
+
+            padding-top: 70px;
+        }
+
+
+        .subtitle {
+
+            color: #6ab6ff;
+
+            font-size: 13px;
+
+            letter-spacing: 4px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(45px, 6vw, 75px);
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+
+            letter-spacing: -2px;
+        }
+
+
+        .hero h1 span {
+
+            color: #168cff;
+        }
+
+
+        .hero p {
+
+            max-width: 650px;
+
+            color: #dce9f8;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ===============================
+           HERO BUTTON
+        =============================== */
+
+        .buttons {
+
+            display: flex;
+
+            gap: 15px;
+
+            margin-top: 30px;
+        }
+
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 14px 25px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .btn-primary {
+
+            background: #f7165d;
+
+            color: white;
+        }
+
+
+        .btn-primary:hover {
+
+            background: #3b9cff;
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        .btn-outline {
+
+            border: 1px solid white;
+
+            color: white;
+        }
+
+
+        .btn-outline:hover {
+
+            background: white;
+
+            color: #061a38;
+        }
+
+
+        /* ===============================
+           SCROLL
+        =============================== */
+
+        .scroll {
+
+            position: absolute;
+
+            bottom: 30px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            width: 28px;
+
+            height: 45px;
+
+            border: 2px solid white;
+
+            border-radius: 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            padding-top: 8px;
+        }
+
+
+        .scroll span {
+
+            width: 5px;
+
+            height: 8px;
+
+            background: white;
+
+            border-radius: 5px;
+
+            animation:
+                turun 1.5s infinite;
+        }
+
+
+        @keyframes turun {
+
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(15px);
+                opacity: 0;
+            }
+
+        }
+
+
+        /* ===============================
+           RESPONSIVE
+        =============================== */
+
+        @media(max-width: 900px) {
+
+            nav {
+
+                display: none;
+
+                position: absolute;
+
+                top: 80px;
+
+                left: 0;
+
+                width: 100%;
+
+                height: auto;
+
+                padding: 20px 7%;
+
+                background: #061a38;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 18px;
+            }
+
+
+            nav.active {
+                display: flex;
+            }
+
+
+            .menu-toggle {
+                display: block;
+            }
+
+
+            .dropdown {
+
+                width: 100%;
+
+                height: auto;
+
+                display: block;
+            }
+
+
+            .dropdown-menu {
+
+                position: static;
+
+                width: 100%;
+
+                margin-top: 8px;
+
+                display: none;
+
+                opacity: 1;
+
+                visibility: visible;
+
+                transform: none;
+
+                box-shadow: none;
+            }
+
+
+            .dropdown-menu.show {
+                display: block;
+            }
+
+
+            .hero-content {
+
+                margin-left: 7%;
+
+                margin-right: 7%;
+            }
+
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+        }
+
+
+        @media(max-width: 500px) {
+
+            header {
+                height: 70px;
+            }
+
+
+            .logo img {
+
+                width: 45px;
+                height: 45px;
+            }
+
+
+            .logo-text {
+
+                font-size: 10px;
+            }
+
+
+            .logo-text strong:first-child {
+
+                font-size: 12px;
+            }
+
+
+            nav {
+
+                top: 70px;
+            }
+
+
+            .hero {
+
+                background-position: 60% center;
+            }
+
+
+            .hero h1 {
+
+                font-size: 42px;
+            }
+
+
+            .hero p {
+
+                font-size: 15px;
+            }
+
+
+            .buttons {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <div class="page">
+
+        <!-- =========================
+             BACKGROUND FOTO
+        ========================== -->
+
+        <img
+            class="hero-bg"
+            src="WhatsApp Image 2026-10-01 at 17.56.39.jpeg"
+            alt="WhatsApp"
+        >
+
+        <div class="hero-overlay"></div>
+    <!-- ============ =====================================
+         HEADER
+    ================================================== -->
+
+    <header>
+
+
+        <!-- LOGO -->
+
+        <a
+            href="Cuplikan layar 2026-10-01 132538.png"
+            class="Cuplikan"
+        >
+
+            <img
+                src="Cuplikan layar 2026-10-01 132538.png"
+                alt="Cuplikan" width="40" height="40"
+            >
+
+            <div class="logo-text">
+
+                <strong>
+                    SISTEM DAN
+                </strong>
+
+                <strong>
+                    TEKNOLOGI INFORMASI
+                </strong>
+
+            </div>
+
+        </a>
+
+
+        <!-- MOBILE BUTTON -->
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+        >
+
+            ☰
+
+        </button>
+
+
+        <!-- MENU -->
+
+        <nav id="navMenu">
+
+            <!-- Dropdown Beranda-->
+            <div class="dropdown">
+                <button class="dropdown-btn" id="dropdownBtn">
+                    Beranda
+                    <span class="arrow">
+                         ▼
+                    </span>
+                </button>
+            <div
+                class="dropdown-menu"
+                id="dropdownMenu">
+            <a href="#profil">
+                Profil
+            </a>
+            </div>
+            </div>
+            <!--dropdown-->
+            <div class="dropdown">
+                <button class="dropdown-btn" id="dropdownBtn">
+                    Tentang
+                    <span class="arrow">
+                         ▼
+                    </span>
+                </button>
+            <div
+                class="dropdown-menu"
+                id="dropdownMenu">
+            <a href="#Organisasi">
+                Struktur Organisasi
+            </a>
+            </div>
+            </div>
+
+            <!--Dropdown-->
+            <div class="dropdown">
+                <button class="dropdown-btn"
+                 id="dropdownBtn">
+                    Program Studi
+                    <span class="arrow">
+                         ▼
+                    </span>
+                </button>
+            <div
+                class="dropdown-menu"
+                id="dropdownMenu">
+            <a href="#Sistem Dan Teknologi Informasi">
+                Sistem Dan Teknologi Informasi
+            </a>
+            </div>
+            
+            </div>
+
+
+                 <!--Dropdown-->
+            <div class="dropdown">
+                <button class="dropdown-btn"
+                 id="dropdownBtn">
+                    Kegiatan
+                    <span class="arrow">
+                         ▼
+                    </span>
+                </button>
+            <div
+                class="dropdown-menu"
+                id="dropdownMenu">
+            <a href="#Kegiatan Mahasiswa">
+                Kegiatan Mahasiswa
+            </a>
+            </div>
+            
+            </div>
+
+             <!--Dropdown-->
+            <div class="dropdown">
+                <button class="dropdown-btn"
+                 id="dropdownBtn">
+                    Informasi
+                    <span class="arrow">
+                         ▼
+                    </span>
+                </button>
+            <div
+                class="dropdown-menu"
+                id="dropdownMenu">
+            <a href="#Pengumuman">
+                Pengumuman
+            </a>
+            </div>
+            
+            </div>
+
+            <!-- =========================
+         SEARCH
+    ========================= -->
+
+    <div class="search-area" >
+        
+
+
+        <!-- SEARCH BOX -->
+
+        <div class="search-box" >
+
+            <!-- Icon kaca kecil -->
+
+            <span class="search-icon" width="30" height="30"></span>
+
+
+            <!-- Input -->
+
+            <input
+                type="text"
+                class="search-input"
+                id="searchInput"
+                placeholder="Search"
+                autocomplete="off"
+                
+            >
+
+        </div>
+
+
+        <!-- CANCEL -->
+
+        <button
+            class="cancel"
+            id="cancelButton"
+            width="30"
+            height="30"
+        >
+            Cancel
+        </button>
+
+    </div>
+        </nav>
+
+    </header>
+
+
+
+    <!-- =================================================
+         HERO / LANDING PAGE
+    ================================================== -->
+    <section
+        class="hero"
+        id="beranda"
+    >
+
+
+        <div class="hero-content">
+
+
+            <div class="subtitle">
+
+                WELCOME TO
+            </div>
+                Website
+
+            <h1>
+
+                SISTEM DAN TEKNOLOGI
+
+                <span>
+                    INFORMASI
+                </span>
+
+                2026
+
+            </h1>
+
+
+            <p>
+
+                Menyiapkan generasi yang kompeten,
+                kreatif, inovatif, dan berintegritas
+                melalui teknologi informasi yang relevan
+                dengan kebutuhan dunia digital.
+
+            </p>
+
+
+            <div class="buttons">
+
+
+                <a
+                    href="#profil"
+                    class="btn btn-primary"
+                >
+
+                    → &nbsp;
+
+                    Daftar Sekarang
+
+                </a>
+
+
+                <a
+                    href="#kegiatan"
+                    class="btn btn-outline"
+                >
+
+                    ▶ &nbsp;
+
+                    Lihat Kegiatan
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- SCROLL INDICATOR -->
+
+        <div class="scroll">
+
+            <span></span>
+
+        </div>
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+
+        /* ===============================
+           MENU MOBILE
+        =============================== */
+
+        const menuToggle =
+            document.getElementById(
+                "menuToggle"
+            );
+
+
+        const navMenu =
+            document.getElementById(
+                "navMenu"
+            );
+
+
+        menuToggle.addEventListener(
+            "click",
+            function() {
+
+                navMenu.classList.toggle(
+                    "active"
+                );
+
+            }
+        );
+
+
+
+        /* ===============================
+           DROPDOWN MENU
+        =============================== */
+
+        const dropdownBtn =
+            document.getElementById(
+                "dropdownBtn"
+            );
+
+
+        const dropdownMenu =
+            document.getElementById(
+                "dropdownMenu"
+            );
+
+
+        dropdownBtn.addEventListener(
+            "click",
+            function(event) {
+
+                event.stopPropagation();
+
+                dropdownMenu.classList.toggle(
+                    "show"
+                );
+
+            }
+        );
+
+
+
+        /* ===============================
+           KLIK DI LUAR DROPDOWN
+        =============================== */
+
+        document.addEventListener(
+            "click",
+            function(event) {
+
+                if (
+                    !event.target.closest(
+                        ".dropdown"
+                    )
+                ) {
+
+                    dropdownMenu.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* ===============================
+           TUTUP MENU MOBILE
+        =============================== */
+
+        document
+            .querySelectorAll(
+                "nav a"
+            )
+            .forEach(
+                function(link) {
+
+                    link.addEventListener(
+                        "click",
+                        function() {
+
+                            navMenu.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+    </script>
+
+
+</body>
+</html>
